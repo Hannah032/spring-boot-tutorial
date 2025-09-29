@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Chap07
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      location: C:/uploads
+      max-file-size: 20MB
+      max-request-size: 20MB
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:/static/,file:C:/uploads/
+ 
+
+server:
+  port: 9293

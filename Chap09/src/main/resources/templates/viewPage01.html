@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+        span {
+            color: red;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+<h3>유효성 검사</h3>
+<form action="/exam01" th:object="${product}" method="post">
+  <p>품명: <input type="text" th:field="*{name}" /><br>
+    <span th:errors="*{name}" />
+  </p>
+  <p>가격: <input type="text" th:field="*{price}" /><br>
+    <span th:errors="*{price}" />
+  </p>
+  <p>
+    <input type="submit" value="확인" />
+    <input type="reset" value="취소" />
+  </p>
+</form>
+</body>
+</html>

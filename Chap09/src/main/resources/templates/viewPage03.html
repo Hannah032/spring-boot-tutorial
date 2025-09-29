@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+        span {
+            color: red;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+<h3>Contraint 사용자 정의 유효성 검사</h3>
+<form action="/exam01" th:object="${member}" method="post">
+  <p>아이디: <input type="text" th:field="*{memberId}" /><br>
+    <span th:errors="*{memberId}" />
+  </p>
+  <p>비밀번호: <input type="text" th:field="*{passwd}" /><br>
+    <span th:errors="*{passwd}" />
+  </p>
+  <p>
+    <input type="submit" value="확인" />
+    <input type="reset" value="취소" />
+  </p>
+</form>
+</body>
+</html>

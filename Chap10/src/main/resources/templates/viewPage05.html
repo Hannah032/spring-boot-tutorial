@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Chap10</title>
+</head>
+<body>
+<h3>스프링 시큐리티</h3>
+<form action="/exam05"	method="post">
+  <p>사용자명 <input type="text" name="username" placeholder="username"></p>
+  <p>비밀번호 <input type="password" name="password" placeholder="password"></p>
+  <p><input type="submit" value="로그인" /></p>
+  <!-- 외부 로그인 -->
+  <a href="/oauth2/authorization/google">
+    <!--        Google Login-->
+    <img src="/images/web_light_sq_ctn@1x.png" alt="Google Login" style="">
+  </a>
+  <a href="/oauth2/authorization/naver">
+    <img src="/images/btnW_완성형.png" alt="Naver Login" style="width: 150px; height: 30px;" />
+  </a>
+  <a href="/oauth2/authorization/kakao">카카오로그인</a>
+</form>
+</body>
+</html>

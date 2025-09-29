@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h3>다국어 처리</h3>
+<p th:text="#{Person.form.Enter.message}" />
+<form action="#" method="post">
+  <p><span th:text="#{Person.form.name}" />: <input type="text" name="name" /></p>
+  <p><span th:text="#{Person.form.email}" />: <input type="text" name="email" /></p>
+  <p>
+    <input type="submit" value="확인" />
+    <input type="reset" value="취소" />
+  </p>
+</form>
+</body>
+</html>

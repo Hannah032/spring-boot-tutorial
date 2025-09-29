@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>파일 업로드 결과</title>
+</head>
+<body>
+<h3>파일 다운로드 페이지</h3>
+<div th:if="${error}" style="color: red;">
+    <p th:text="${error}"></p>
+</div>
+<div th:if="${!error}">
+    <p>실제 파일 이름: <span th:text="${data2}"></span></p>
+    <p>서버 파일 이름: <span th:text="${data3}"></span></p>
+    <p><img th:src="@{'/static/' + ${data3}}" style="width:15%;" alt="업로드된 이미지"/></p>
+</div>
+</body>
+</html>

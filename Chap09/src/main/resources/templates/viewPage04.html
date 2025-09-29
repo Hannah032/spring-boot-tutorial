@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+        span {
+            color: red;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+<h3>Spring Validator 유효성 검사</h3>
+<form action="/exam04" th:object="${person}" method="post">
+  <p>아이디: <input type="text" th:field="*{name}" /><br>
+    <span th:errors="*{name}" />
+  </p>
+  <p>비밀번호: <input type="text" th:field="*{age}" /><br>
+    <span th:errors="*{age}" />
+  </p>
+  <p>이메일: <input type="text" th:field="*{email}" /><br>
+    <span th:errors="*{email}" />
+  </p>
+  <p>
+    <input type="submit" value="확인" />
+    <input type="reset" value="취소" />
+  </p>
+</form>
+</body>
+</html>
