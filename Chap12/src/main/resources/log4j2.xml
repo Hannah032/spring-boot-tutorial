@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>-->
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+        <!-- 파일 로그 패턴 처리 -->
+        <File name="file1" fileName="./logs/file/sample.log" append="false">
+            <PatternLayout pattern="%d %m%n"/>
+        </File>
+        <!-- 롤링 파일 로그 패턴 처리 -->
+        <!-- 롤링 파일 로그 패턴 처리 -->
+        <RollingFile name="file2" fileName="./logs/rollinglog.log" filePattern="./logs/rollinglog.%i.log">
+            <PatternLayout pattern="%d [%m]%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="15MB"/> <!-- 15MB 까지 차면 다음 파일로 만들어 짐 -->
+                <TimeBasedTriggeringPolicy interval="1"/> <!-- 매일 자정마다 새로운 파일로 만들어 짐 -->
+            </Policies>
+            <DefaultRolloverStrategy max="3"/> <!-- 최대 3개까지 파일 생성 -->
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="file1"/>    <!-- 파일 로그 사용 -->
+            <AppenderRef ref="file2"/>    <!-- 롤링 파일 로그 사용 -->
+        </Root>
+    </Loggers>
+</Configuration>
