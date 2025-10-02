@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>
+    function myMethod() {
+        //alert('전송중');
+
+        var get_form = document.form;
+        var obj = new Object();
+        obj.name = get_form.name.value;
+        obj.age = get_form.age.value;
+        obj.email = get_form.email.value;
+
+        var json_data = JSON.stringify(obj); // JSON 문자열로 변환
+
+        // restful 방식 - ajax
+        $.ajax({
+            url: '/exam02/json-request',
+            type: 'POST',
+            data: json_data, // 요청 전송 데이터
+            contentType: 'application/json; charset=UTF-8',
+            success: function(response) {
+                alert('성공');
+                console.log("resp:", response);
+            },
+            error: function(xhr, status, error) {
+                alert('실패');
+            }
+        });
+    }
+</script>
+<h3>RESTful 웹 서비스</h3>
+<form  action="/exam02" method="post" name="form">
+    <p>이름：<input name="name" />
+    <p>나이：<input name="age" />
+    <p>이메일：<input name="email" />
+    <p><input type="button" onclick="myMethod()" value="전송하기" />
+</form>
+</body>
+</body>
+</html>
